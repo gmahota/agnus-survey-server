@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only src/server.ts",
-    "start": "node dist/src/server.js",
+    "start": "node dist/server.js",
     "deploy": "git add . && git commit -m 'Heroku' && git push heroku main",
     "build": "tsc",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
