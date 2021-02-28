@@ -1,52 +1,24 @@
-import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
+import {Entity,Column,PrimaryColumn,PrimaryGeneratedColumn, ManyToOne,JoinColumn} from 'typeorm';
+@Entity('customers')
+export default class Customer {
+    @PrimaryGeneratedColumn('increment')
+    id:number;
 
-@Entity("users")
-export default class User {   
+    @Column({length: 50, nullable:false })
+    name?:string;
+    
+    @Column({length: 50, nullable:true })
+    address?:string;
 
-  @PrimaryColumn()
-  id: string;
+    @Column({length: 20, nullable:true })
+    vat?:string;
 
-  @Column()
-  username: string;
-  
-  @Column()
-  name: string;
-  
-  @Column()
-  firstName?: string;
-  
-  @Column()
-  lastName?: string;
-  
-  @Column()
-  email?: string;
+    @Column({length: 50, nullable:true })
+    province?: string;
+    
+    @Column({length: 20, nullable:false })
+    phoneNumber:string;
 
-  @Column()
-  phoneNumber?: string;
-  
-  @Column()
-  password: string;
-  
-  @Column()
-  confirmPassword: boolean;
-  
-  @Column()
-  inactive: boolean;
-  
-  @Column()
-  country: string;
-
-  constructor(){
-    this.firstName= ""
-    this.firstName= "",
-    this.email= "",
-    this.phoneNumber= "",
-    this.confirmPassword= false,
-    this.country="Moz"
-  } 
+    @Column()
+    status?:string;
 }
-
-export {
-  //UserSchema,
-  User,
-};
