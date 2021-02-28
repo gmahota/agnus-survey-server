@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import userService from '../../services/auth/user';
-import token from '../../services/auth/token';
+import userService from '../../../services/auth/user';
+import token from '../../../services/auth/token';
 
 export const login = async (request: Request, response: Response) => {
   

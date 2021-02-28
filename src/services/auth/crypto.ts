@@ -1,7 +1,7 @@
 
 import bcrypt from "bcrypt";
 
-import config from "../../../config/crypto";
+import config from "../../config/crypto";
 
 const hash = (value:any) =>
   bcrypt

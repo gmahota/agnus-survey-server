@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { v4 } from "uuid";
-import userService from "../../services/auth/user";
+import userService from "../../../services/auth/user";
 
 export const get_all_users = async (request: Request, response: Response) => {
   const users = await userService.getUsers();
