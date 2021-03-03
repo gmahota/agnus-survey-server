@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne,OneToMany, JoinColumn } from "typeorm"
 import SurveyDocument from "./surveyDocument";
 
 @Entity("survey")
@@ -25,7 +25,9 @@ class Survey{
     @JoinColumn({name:'document_id'})
     document?:SurveyDocument;
 
-    @JoinColumn([{ referencedColumnName: "id" }, { referencedColumnName: "survey_id" }])
+    @OneToMany(()=> SurveyItem, items => items.survey,{
+        cascade:['insert','update']
+    })
     items?: SurveyItem[];    
     
     constructor() {
